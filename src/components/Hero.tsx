@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteContent } from '../content/site';
+import { HeroGraphic } from './HeroGraphic';
 
 export const Hero: React.FC = () => {
   return (
@@ -22,6 +23,10 @@ export const Hero: React.FC = () => {
           >
             {siteContent.hero.ctaLabel}
           </a>
+
+          <div className="mt-14 md:mt-16 w-full">
+            <HeroGraphic />
+          </div>
         </div>
       </div>
     </section>
