@@ -65,3 +65,12 @@ static single-page app.
 - Standards: SemVer + Conventional Commits; dependencies pinned in
   `package.json`; no secrets in repo; images lazy-loaded with explicit
   width/height to avoid layout shift (CLS).
+
+## Update (T-001 enhancement) — manual theme toggle added
+
+The original decision used `darkMode: 'media'` (auto-only, follows OS) and deferred
+a manual toggle. Per stakeholder request this was reversed: switched to
+`darkMode: 'class'`, added a header sun/moon toggle button that persists the
+choice in `localStorage` (key `theme`) and falls back to OS preference, with an
+inline no-FOUC script in `index.html`. First visit still follows the OS; the
+toggle overrides it thereafter.
