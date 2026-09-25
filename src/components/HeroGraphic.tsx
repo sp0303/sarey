@@ -1,21 +1,18 @@
 import React from 'react';
 
 /**
- * Decorative hero illustration: an abstract "agent constellation" — a central
- * orchestrator node linked to specialised agent nodes. Purely presentational;
- * uses solid theme tokens (fill-bg / fill-accent / stroke-accent / stroke-border)
- * for opaque parts and explicit rgba for translucent accents so it renders
- * correctly in BOTH light and dark. Marked aria-hidden as it conveys no info.
- *
- * NB: Tailwind opacity modifiers (e.g. fill-accent/10) are NOT used here because
- * our color tokens are hex CSS variables and the /opacity syntax produces an
- * invalid color against them.
+ * Decorative hero illustration: an animated "agent constellation" — a central
+ * orchestrator node linked to specialised agent nodes, with data-flow beams
+ * travelling outward along each link, pulsing nodes and a slowly rotating orbit.
+ * Purely presentational; opaque parts use theme tokens, translucent accents use
+ * explicit rgba so it renders correctly in BOTH light and dark. Marked
+ * aria-hidden. All motion is gated by motion-safe (respects reduced motion).
  */
 const CENTER = { x: 280, y: 180 };
 const R = 132;
 const NODE_ANGLES = [0, 60, 120, 180, 240, 300];
-const ACCENT_SOFT = 'rgba(99, 102, 241, 0.10)'; // indigo-500 @10% — subtle on both themes
-const ACCENT_LINE = 'rgba(99, 102, 241, 0.40)';
+const ACCENT_SOFT = 'rgba(99, 102, 241, 0.10)';
+const ACCENT_LINE = 'rgba(99, 102, 241, 0.35)';
 
 const nodes = NODE_ANGLES.map((deg) => {
   const rad = (deg * Math.PI) / 180;
@@ -43,9 +40,14 @@ export const HeroGraphic: React.FC = () => {
         className="motion-safe:animate-[pulse_5s_ease-in-out_infinite]"
       />
 
-      {/* orbit rings */}
-      <circle cx={CENTER.x} cy={CENTER.y} r={R} className="fill-none stroke-border" strokeWidth="1.5" strokeDasharray="4 8" />
-      <circle cx={CENTER.x} cy={CENTER.y} r={R - 56} className="fill-none stroke-border" strokeWidth="1.5" strokeDasharray="4 8" />
+      {/* rotating orbit rings */}
+      <g
+        className="motion-safe:animate-[orbit-spin_60s_linear_infinite]"
+        style={{ transformBox: 'fill-box', transformOrigin: 'center' } as React.CSSProperties}
+      >
+        <circle cx={CENTER.x} cy={CENTER.y} r={R} className="fill-none stroke-border" strokeWidth="1.5" strokeDasharray="4 8" />
+        <circle cx={CENTER.x} cy={CENTER.y} r={R - 56} className="fill-none stroke-border" strokeWidth="1.5" strokeDasharray="4 8" />
+      </g>
 
       {/* connection lines from core to each agent node */}
       {nodes.map((n, i) => (
@@ -60,11 +62,34 @@ export const HeroGraphic: React.FC = () => {
         />
       ))}
 
+      {/* data-flow beams travelling outward along each link */}
+      {nodes.map((n, i) => (
+        <circle
+          key={`b-${i}`}
+          cx={CENTER.x}
+          cy={CENTER.y}
+          r="3.5"
+          className="fill-accent motion-safe:animate-[beam-flow_2.8s_ease-in-out_infinite]"
+          style={{
+            ['--tx' as string]: `${n.x - CENTER.x}px`,
+            ['--ty' as string]: `${n.y - CENTER.y}px`,
+            animationDelay: `${i * 0.32}s`,
+            opacity: 0,
+          } as React.CSSProperties}
+        />
+      ))}
+
       {/* agent nodes */}
       {nodes.map((n, i) => (
         <g key={`n-${i}`}>
           <circle cx={n.x} cy={n.y} r="20" className="fill-bg stroke-accent" strokeWidth="2" />
-          <circle cx={n.x} cy={n.y} r="7" className="fill-accent" />
+          <circle
+            cx={n.x}
+            cy={n.y}
+            r="7"
+            className="fill-accent motion-safe:animate-[pulse_3s_ease-in-out_infinite]"
+            style={{ animationDelay: `${i * 0.25}s` }}
+          />
         </g>
       ))}
 
@@ -76,10 +101,9 @@ export const HeroGraphic: React.FC = () => {
       {/* central orchestrator core */}
       <circle cx={CENTER.x} cy={CENTER.y} r="40" style={{ fill: ACCENT_SOFT }} />
       <circle cx={CENTER.x} cy={CENTER.y} r="40" className="fill-none stroke-accent" strokeWidth="2.5" />
-      {/* core spark mark */}
       <path
         d="M280 158 q6 16 22 22 q-16 6 -22 22 q-6 -16 -22 -22 q16 -6 22 -22 z"
-        className="fill-accent"
+        className="fill-accent motion-safe:animate-[pulse_4s_ease-in-out_infinite]"
       />
     </svg>
   );

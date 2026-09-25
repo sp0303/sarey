@@ -1,62 +1,57 @@
 import React from 'react';
 import { siteContent, TeamIcon } from '../content/site';
 
+// Clean, consistent Lucide icons (ISC licensed) — one per role.
+const svg = (children: React.ReactNode): React.ReactElement => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+    {children}
+  </svg>
+);
+
 const icons: Record<TeamIcon, React.ReactElement> = {
-  analyst: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M3 3v18h18" />
-      <path d="M18 20V10" />
-      <path d="M12 20V4" />
-      <path d="M6 20v-6" />
-    </svg>
-  ),
-  architect: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M3 21l9-18 9 18H3z" />
-      <path d="M10 21v-4a2 2 0 114 0v4" />
-      <path d="M12 7v.01" />
-    </svg>
-  ),
-  designer: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M12 22a10 10 0 1110-10 1 1 0 01-1 1h-3a1 1 0 00-1 1v1a2 2 0 01-2 2h-3z" />
-      <circle cx="7" cy="14" r="1" />
-      <circle cx="7" cy="10" r="1" />
-      <circle cx="11" cy="7" r="1" />
-      <circle cx="15" cy="10" r="1" />
-    </svg>
-  ),
-  developer: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  ),
-  qa: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H6v-4L3 12l3-3V6h4L12 2z" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
-  ),
-  security: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      <path d="M12 8v4" />
-      <path d="M12 16h.01" />
-    </svg>
-  ),
-  curator: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M12 3l1.5 6.5L20 11l-6.5 1.5L12 19l-1.5-6.5L4 11l6.5-1.5z" />
-      <path d="M18 19l1 3 3-1-3-1-1-3z" />
-      <path d="M5 4l.5 2 2-.5-2-.5L5 2z" />
-    </svg>
-  ),
-  devops: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M8 8a4 4 0 100 8c3 0 5-8 8-8a4 4 0 110 8c-3 0-5-8-8-8z" />
-    </svg>
-  ),
+  // clipboard-list
+  analyst: svg(<>
+    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+    <path d="M12 11h4" /><path d="M12 16h4" /><path d="M8 11h.01" /><path d="M8 16h.01" />
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+  </>),
+  // drafting-compass
+  architect: svg(<>
+    <circle cx="12" cy="5" r="2" />
+    <path d="m3 21 8.02-14.26" /><path d="m12.99 6.74 1.93 3.44" />
+    <path d="M19 12c-3.87 4-10.13 4-14 0" />
+    <path d="m21 21-2.16-3.84" />
+  </>),
+  // pen-tool
+  designer: svg(<>
+    <path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z" />
+    <path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18" />
+    <path d="m2.3 2.3 7.286 7.286" />
+    <circle cx="11" cy="11" r="2" />
+  </>),
+  // code-xml
+  developer: svg(<>
+    <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
+  </>),
+  // badge-check
+  qa: svg(<>
+    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+    <path d="m9 12 2 2 4-4" />
+  </>),
+  // shield-check
+  security: svg(<>
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+    <path d="m9 12 2 2 4-4" />
+  </>),
+  // sparkles
+  curator: svg(<>
+    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z" />
+    <path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" />
+  </>),
+  // infinity
+  devops: svg(<>
+    <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" />
+  </>),
 };
 
 export const Team: React.FC = () => {
