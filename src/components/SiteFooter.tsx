@@ -3,8 +3,8 @@ import { siteContent } from '../content/site';
 
 export const SiteFooter: React.FC = () => {
   return (
-    <footer className="border-t border-border py-10 bg-bg">
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-border pt-10 pb-6 bg-bg">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
         <a 
           href="#main" 
           aria-label="sarey — home"
@@ -24,9 +24,14 @@ export const SiteFooter: React.FC = () => {
             </a>
           ))}
         </div>
-        
-        <div className="text-small text-fg-muted">
+      </div>
+      
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 pt-6">
+        <div className="text-small text-fg-muted text-center md:text-left">
           {siteContent.footer.copyright}
+        </div>
+        <div className="text-small text-fg-muted text-center md:text-right">
+          {siteContent.footer.credit}
         </div>
       </div>
     </footer>

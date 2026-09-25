@@ -1,6 +1,7 @@
 export interface NavLink { label: string; href: string; }
 export interface PipelineStep { step: number; name: string; blurb: string; }
-export interface TeamRole { role: string; capability: string; }
+export type TeamIcon = 'analyst' | 'architect' | 'designer' | 'developer' | 'qa' | 'security' | 'curator' | 'devops';
+export interface TeamRole { role: string; name: string; capability: string; icon: TeamIcon; }
 export interface Integration {
   name: string;
   vendor: string;
@@ -19,7 +20,7 @@ export interface SiteContent {
   integrations: { heading: string; items: Integration[]; };
   faq: { heading: string; entries: FaqEntry[]; };
   contact: { heading: string; body: string; ctaLabel: string; };
-  footer: { copyright: string; links: NavLink[]; };
+  footer: { copyright: string; credit: string; links: NavLink[]; };
 }
 
 export const siteContent: SiteContent = {
@@ -53,14 +54,14 @@ export const siteContent: SiteContent = {
   team: {
     heading: "Team",
     roles: [
-      { role: "Business Analyst", capability: "Transforms needs into structured project scopes." },
-      { role: "Architect", capability: "Designs scalable systems and task contracts." },
-      { role: "UX/UI Designer", capability: "Creates accessible and systemic design languages." },
-      { role: "Developer", capability: "Writes strict, testable code to specification." },
-      { role: "QA Reviewer", capability: "Verifies acceptance criteria and accessibility." },
-      { role: "Security Engineer", capability: "Audits for vulnerabilities and data integrity." },
-      { role: "Skill Curator", capability: "Maintains toolsets and integration prompts." },
-      { role: "DevOps", capability: "Automates deployments and manages infrastructure." },
+      { role: "Business Analyst", name: "Maya", icon: "analyst", capability: "Transforms needs into structured project scopes." },
+      { role: "Architect", name: "Arjun", icon: "architect", capability: "Designs scalable systems and task contracts." },
+      { role: "UX/UI Designer", name: "Uma", icon: "designer", capability: "Creates accessible and systemic design languages." },
+      { role: "Developer", name: "Rohan", icon: "developer", capability: "Writes strict, testable code to specification." },
+      { role: "QA Reviewer", name: "Quinn", icon: "qa", capability: "Verifies acceptance criteria and accessibility." },
+      { role: "Security Engineer", name: "Zara", icon: "security", capability: "Audits for vulnerabilities and data integrity." },
+      { role: "Skill Curator", name: "Kabir", icon: "curator", capability: "Maintains toolsets and integration prompts." },
+      { role: "DevOps", name: "Neel", icon: "devops", capability: "Automates deployments and manages infrastructure." },
     ],
   },
   integrations: {
@@ -124,6 +125,7 @@ export const siteContent: SiteContent = {
   },
   footer: {
     copyright: "© 2026 sarey.tech",
+    credit: "A Sharat Patnayakuni's product",
     links: [
       { label: "About", href: "#about" },
       { label: "How it works", href: "#how" },
