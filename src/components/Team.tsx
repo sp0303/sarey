@@ -69,15 +69,25 @@ export const Team: React.FC = () => {
         
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {siteContent.team.roles.map((role, index) => (
-            <li 
+            <li
               key={index}
               className="bg-bg border border-border rounded-xl p-6 h-full transition-colors duration-150 hover:border-accent hover:shadow-card-hover dark:hover:shadow-none dark:hover:bg-surface/50 flex flex-col"
             >
-              <div 
-                className="w-12 h-12 rounded-lg mb-5 bg-accent/10 text-accent flex items-center justify-center" 
-                aria-hidden="true"
-              >
-                {icons[role.icon]}
+              <div className="relative w-16 h-16 mb-5">
+                <img
+                  src={role.avatar}
+                  alt={`${role.name}, ${role.role}`}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  className="w-16 h-16 rounded-full object-cover bg-accent/10 ring-1 ring-border"
+                />
+                <span
+                  className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center ring-2 ring-bg [&>svg]:w-4 [&>svg]:h-4"
+                  aria-hidden="true"
+                >
+                  {icons[role.icon]}
+                </span>
               </div>
               <h3 className="text-h3 text-fg">{role.name}</h3>
               <p className="text-small text-accent font-medium mb-3">{role.role}</p>

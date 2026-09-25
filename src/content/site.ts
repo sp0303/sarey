@@ -1,7 +1,7 @@
 export interface NavLink { label: string; href: string; }
 export interface PipelineStep { step: number; name: string; blurb: string; }
 export type TeamIcon = 'analyst' | 'architect' | 'designer' | 'developer' | 'qa' | 'security' | 'curator' | 'devops';
-export interface TeamRole { role: string; name: string; capability: string; icon: TeamIcon; }
+export interface TeamRole { role: string; name: string; capability: string; icon: TeamIcon; avatar: string; }
 export interface Integration {
   name: string;
   vendor: string;
@@ -54,14 +54,14 @@ export const siteContent: SiteContent = {
   team: {
     heading: "Team",
     roles: [
-      { role: "Business Analyst", name: "Maya", icon: "analyst", capability: "Transforms needs into structured project scopes." },
-      { role: "Architect", name: "Arjun", icon: "architect", capability: "Designs scalable systems and task contracts." },
-      { role: "UX/UI Designer", name: "Uma", icon: "designer", capability: "Creates accessible and systemic design languages." },
-      { role: "Developer", name: "Rohan", icon: "developer", capability: "Writes strict, testable code to specification." },
-      { role: "QA Reviewer", name: "Quinn", icon: "qa", capability: "Verifies acceptance criteria and accessibility." },
-      { role: "Security Engineer", name: "Zara", icon: "security", capability: "Audits for vulnerabilities and data integrity." },
-      { role: "Skill Curator", name: "Kabir", icon: "curator", capability: "Maintains toolsets and integration prompts." },
-      { role: "DevOps", name: "Neel", icon: "devops", capability: "Automates deployments and manages infrastructure." },
+      { role: "Business Analyst", name: "Maya", icon: "analyst", avatar: "/avatars/maya.svg", capability: "Transforms needs into structured project scopes." },
+      { role: "Architect", name: "Arjun", icon: "architect", avatar: "/avatars/arjun.svg", capability: "Designs scalable systems and task contracts." },
+      { role: "UX/UI Designer", name: "Uma", icon: "designer", avatar: "/avatars/uma.svg", capability: "Creates accessible and systemic design languages." },
+      { role: "Developer", name: "Rohan", icon: "developer", avatar: "/avatars/rohan.svg", capability: "Writes strict, testable code to specification." },
+      { role: "QA Reviewer", name: "Quinn", icon: "qa", avatar: "/avatars/quinn.svg", capability: "Verifies acceptance criteria and accessibility." },
+      { role: "Security Engineer", name: "Zara", icon: "security", avatar: "/avatars/zara.svg", capability: "Audits for vulnerabilities and data integrity." },
+      { role: "Skill Curator", name: "Kabir", icon: "curator", avatar: "/avatars/kabir.svg", capability: "Maintains toolsets and integration prompts." },
+      { role: "DevOps", name: "Neel", icon: "devops", avatar: "/avatars/neel.svg", capability: "Automates deployments and manages infrastructure." },
     ],
   },
   integrations: {
