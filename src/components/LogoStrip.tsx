@@ -21,6 +21,7 @@ export const LogoStrip: React.FC = () => {
               <img 
                 src={item.logoSrc} 
                 alt={item.alt}
+                width={160}
                 height={32}
                 loading="lazy"
                 className="h-8 w-auto object-contain opacity-70 grayscale transition-all duration-150 group-hover:opacity-100 group-hover:grayscale-0 group-focus-visible:opacity-100 group-focus-visible:grayscale-0"
