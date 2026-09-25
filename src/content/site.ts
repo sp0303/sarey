@@ -54,14 +54,14 @@ export const siteContent: SiteContent = {
   team: {
     heading: "Team",
     roles: [
-      { role: "Business Analyst", name: "Maya", icon: "analyst", avatar: "/avatars/maya.svg", capability: "Transforms needs into structured project scopes." },
+      { role: "Business Analyst", name: "Jacobin", icon: "analyst", avatar: "/avatars/jacobin.svg", capability: "Transforms needs into structured project scopes." },
       { role: "Architect", name: "Arjun", icon: "architect", avatar: "/avatars/arjun.svg", capability: "Designs scalable systems and task contracts." },
-      { role: "UX/UI Designer", name: "Uma", icon: "designer", avatar: "/avatars/uma.svg", capability: "Creates accessible and systemic design languages." },
-      { role: "Developer", name: "Rohan", icon: "developer", avatar: "/avatars/rohan.svg", capability: "Writes strict, testable code to specification." },
-      { role: "QA Reviewer", name: "Quinn", icon: "qa", avatar: "/avatars/quinn.svg", capability: "Verifies acceptance criteria and accessibility." },
-      { role: "Security Engineer", name: "Zara", icon: "security", avatar: "/avatars/zara.svg", capability: "Audits for vulnerabilities and data integrity." },
-      { role: "Skill Curator", name: "Kabir", icon: "curator", avatar: "/avatars/kabir.svg", capability: "Maintains toolsets and integration prompts." },
-      { role: "DevOps", name: "Neel", icon: "devops", avatar: "/avatars/neel.svg", capability: "Automates deployments and manages infrastructure." },
+      { role: "UX/UI Designer", name: "Sparsha", icon: "designer", avatar: "/avatars/sparsha.svg", capability: "Creates accessible and systemic design languages." },
+      { role: "Developer", name: "Vaka", icon: "developer", avatar: "/avatars/vaka.svg", capability: "Writes strict, testable code to specification." },
+      { role: "QA Reviewer", name: "Tara", icon: "qa", avatar: "/avatars/tara.svg", capability: "Verifies acceptance criteria and accessibility." },
+      { role: "Security Engineer", name: "Kara", icon: "security", avatar: "/avatars/kara.svg", capability: "Audits for vulnerabilities and data integrity." },
+      { role: "Skill Curator", name: "Ira", icon: "curator", avatar: "/avatars/ira.svg", capability: "Maintains toolsets and integration prompts." },
+      { role: "DevOps", name: "Vihaan", icon: "devops", avatar: "/avatars/vihaan.svg", capability: "Automates deployments and manages infrastructure." },
     ],
   },
   integrations: {
