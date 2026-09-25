@@ -17,18 +17,16 @@
     --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-bg: #0B1120;
-      --color-surface: #151C2C;
-      --color-border: #273449;
-      --color-fg: #F1F5F9;
-      --color-fg-muted: #94A3B8;
-      --color-accent: #818CF8;
-      --color-accent-hover: #A5B4FC;
-      --color-on-accent: #FFFFFF;
-      --color-focus: #818CF8;
-    }
+  .dark {
+    --color-bg: #0B1120;
+    --color-surface: #151C2C;
+    --color-border: #273449;
+    --color-fg: #F1F5F9;
+    --color-fg-muted: #94A3B8;
+    --color-accent: #818CF8;
+    --color-accent-hover: #A5B4FC;
+    --color-on-accent: #FFFFFF;
+    --color-focus: #818CF8;
   }
 
   body {
