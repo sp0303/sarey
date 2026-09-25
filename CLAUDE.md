@@ -12,8 +12,8 @@ role runs on **Antigravity (agy / Gemini)**. Git is the shared workspace. See
 > New project from this template? Fill in the two blanks below (product + repo),
 > then run `/build-tool <your idea>` to start.
 
-- **This product:** _<one line: what this project builds>_
-- **Remote:** _<git remote URL>_
+- **This product:** _TBD — define during ideation (`/build-tool`)_
+- **Remote:** https://github.com/sp0303/sarey.git
 
 ## The team
 

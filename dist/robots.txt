@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sarey.tech/sitemap.xml
