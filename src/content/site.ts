@@ -79,7 +79,7 @@ export const siteContent: SiteContent = {
         name: "Antigravity",
         vendor: "Google",
         role: "integration",
-        logoSrc: "/logos/antigravity.svg",
+        logoSrc: "/logos/antigravity.png",
         alt: "Antigravity by Google — integration",
         href: "https://google.com",
       },
