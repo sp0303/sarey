@@ -63,7 +63,15 @@ export interface NavLink { label: string; href: string }        // in-page ancho
 
 export interface PipelineStep { step: number; name: string; blurb: string }
 
-export interface TeamRole { role: string; capability: string }  // one-line each
+export interface TeamRole {
+  role: string;         // job title, e.g. "Architect"
+  name: string;         // persona name, e.g. "Arjun"
+  capability: string;   // one-line capability
+  icon: TeamIcon;       // icon id -> inline SVG in Team component
+}
+export type TeamIcon =
+  | 'analyst' | 'architect' | 'designer' | 'developer'
+  | 'qa' | 'security' | 'curator' | 'devops';
 
 export interface Integration {
   name: string;              // "Claude", "Antigravity", "Oracle Cloud"
@@ -88,7 +96,7 @@ export interface SiteContent {
   };
   faq: { heading: string; entries: FaqEntry[] };
   contact: { heading: string; body: string; ctaLabel: string };
-  footer: { copyright: string; links: NavLink[] };
+  footer: { copyright: string; links: NavLink[]; credit: string }; // credit = "A Sharat Patnayakuni's product"
 }
 ```
 
