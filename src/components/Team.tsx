@@ -58,7 +58,8 @@ export const Team: React.FC = () => {
   return (
     <section id="team" aria-labelledby="team-heading" className="bg-surface py-16 md:py-24">
       <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
-        <h2 id="team-heading" className="text-h2 text-fg mb-10 md:mb-12 text-center md:text-left">
+        <span className="text-overline text-fg-muted block mb-3">THE TEAM</span>
+        <h2 id="team-heading" className="text-h2 text-fg mb-10 md:mb-12">
           {siteContent.team.heading}
         </h2>
         
@@ -66,7 +67,7 @@ export const Team: React.FC = () => {
           {siteContent.team.roles.map((role, index) => (
             <li
               key={index}
-              className="bg-bg border border-border rounded-xl p-6 h-full transition-colors duration-150 hover:border-accent hover:shadow-card-hover dark:hover:shadow-none dark:hover:bg-surface/50 flex flex-col"
+              className="bg-bg border border-border rounded-xl p-6 h-full transition-all duration-150 hover:-translate-y-1 hover:border-accent hover:shadow-card-hover dark:hover:shadow-none dark:hover:bg-surface/50 flex flex-col"
             >
               <div className="relative w-16 h-16 mb-5">
                 <img
@@ -78,7 +79,7 @@ export const Team: React.FC = () => {
                   className="w-16 h-16 rounded-full object-cover bg-accent/10 ring-1 ring-border"
                 />
                 <span
-                  className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center ring-2 ring-bg [&>svg]:w-4 [&>svg]:h-4"
+                  className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center ring-2 ring-bg [&>svg]:w-4 [&>svg]:h-4"
                   aria-hidden="true"
                 >
                   {icons[role.icon]}
@@ -86,7 +87,7 @@ export const Team: React.FC = () => {
               </div>
               <h3 className="text-h3 text-fg">{role.name}</h3>
               <p className="text-small text-accent font-medium mb-3">{role.role}</p>
-              <p className="text-body text-fg-muted mt-auto">{role.capability}</p>
+              <p className="text-body text-fg-muted">{role.capability}</p>
             </li>
           ))}
         </ul>

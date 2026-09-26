@@ -20,12 +20,14 @@ export const FaqItem: React.FC<FaqItemProps> = ({ entry, isOpen, onToggle }) => 
           className="w-full flex items-center justify-between py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm"
         >
           <span className="text-h3 text-fg pr-4">{entry.question}</span>
-          <span 
-            aria-hidden="true" 
-            className="text-fg-muted flex-shrink-0 font-mono text-xl transition-transform duration-200"
-            style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          <span
+            aria-hidden="true"
+            className="flex-shrink-0 text-accent transition-transform duration-200"
+            style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
           >
-            +
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </span>
         </button>
       </h3>

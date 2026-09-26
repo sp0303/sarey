@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { siteContent } from '../content/site';
 
 export const SiteHeader: React.FC = () => {
-  const [isDark, setIsDark] = useState<boolean>(false);
+  // Initialise from the class the inline no-FOUC script already set, so the
+  // icon/label are correct on first render (no flash).
+  const [isDark, setIsDark] = useState<boolean>(
+    () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  );
 
   useEffect(() => {
-    // Read initial state set by the inline script
     setIsDark(document.documentElement.classList.contains('dark'));
   }, []);
 

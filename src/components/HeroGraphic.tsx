@@ -26,7 +26,6 @@ export const HeroGraphic: React.FC = () => {
   return (
     <svg
       viewBox="0 0 560 360"
-      role="img"
       aria-hidden="true"
       className="w-full h-auto max-w-2xl mx-auto text-accent"
       xmlns="http://www.w3.org/2000/svg"

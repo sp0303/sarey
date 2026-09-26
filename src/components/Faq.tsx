@@ -12,7 +12,8 @@ export const Faq: React.FC = () => {
   return (
     <section id="faq" aria-labelledby="faq-heading" className="bg-surface py-16 md:py-24">
       <div className="w-full max-w-3xl mx-auto px-6 md:px-8">
-        <h2 id="faq-heading" className="text-h2 text-fg mb-10 text-center">
+        <span className="text-overline text-fg-muted block mb-3">FAQ</span>
+        <h2 id="faq-heading" className="text-h2 text-fg mb-10">
           {siteContent.faq.heading}
         </h2>
         

@@ -13,12 +13,8 @@ export const Hero: React.FC = () => {
           style={{ background: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.28), transparent 62%)' }}
         />
         <div
-          className="absolute top-10 -left-20 h-[26rem] w-[26rem] rounded-full blur-3xl motion-safe:animate-[aurora-drift_20s_ease-in-out_infinite_reverse]"
-          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(168,85,247,0.22), transparent 60%)' }}
-        />
-        <div
-          className="absolute top-24 -right-16 h-[24rem] w-[24rem] rounded-full blur-3xl motion-safe:animate-[aurora-drift_18s_ease-in-out_infinite]"
-          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(56,189,248,0.18), transparent 60%)' }}
+          className="absolute top-10 -left-20 h-[26rem] w-[26rem] rounded-full blur-3xl motion-safe:animate-[aurora-drift_22s_ease-in-out_infinite_reverse]"
+          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(168,85,247,0.20), transparent 60%)' }}
         />
         {/* dotted grid with radial fade */}
         <div className="absolute inset-0 bg-grid-dots text-fg-muted opacity-[0.18]" />

@@ -12,7 +12,7 @@ describe('App smoke test', () => {
     // Other section headings (h2)
     expect(screen.getByRole('heading', { level: 2, name: /We are the Agent Foundry/i })).toBeDefined();
     expect(screen.getByRole('heading', { level: 2, name: /How it works/i })).toBeDefined();
-    expect(screen.getByRole('heading', { level: 2, name: /Team/i })).toBeDefined();
+    expect(screen.getByRole('heading', { level: 2, name: /Meet the agents/i })).toBeDefined();
     expect(screen.getByRole('heading', { level: 2, name: /INTEGRATES WITH \/ DEPLOYED ON/i })).toBeDefined();
     expect(screen.getByRole('heading', { level: 2, name: /Frequently asked questions/i })).toBeDefined();
     expect(screen.getByRole('heading', { level: 2, name: /Let's build something/i })).toBeDefined();

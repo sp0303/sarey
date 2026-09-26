@@ -247,3 +247,28 @@ Reference sketch (developer may refine the glyph):
 ```
 - `html { scroll-behavior: smooth; }` for anchor nav — overridden to `auto` by the
   reduced-motion block above.
+
+---
+
+## Update — reconciled with the shipped build (T-001 enhancements)
+
+The stakeholder approved a richer, more animated direction. This supersedes the
+earlier "no decorative gradients / single indigo / no toggle / media dark mode"
+rules where they conflict:
+
+- **Color tokens are now RGB channel triplets** in `src/index.css`
+  (`--color-accent: 79 70 229;`) and mapped in `tailwind.config.ts` as
+  `rgb(var(--color-x) / <alpha-value>)`, so Tailwind `/opacity` modifiers work.
+  Never redefine a token as a full hex string again (it silently breaks `/NN`).
+- **Dark mode is class-based** (`darkMode: 'class'`) with a manual header toggle
+  persisted to `localStorage` (key `theme`), OS preference as first-load default,
+  and a no-FOUC inline script in `index.html`.
+- **Decorative gradients are allowed**: aurora blobs (indigo/violet) and a
+  gradient headline (`.text-gradient`, stops `#6366F1 → #8B5CF6 → #A855F7`).
+  Rule: gradient text only on large display text (≥ h2), only as the *second*
+  half of the hero headline; first half stays solid `text-fg`. Contrast verified
+  AA large-text (≥3:1) on both backgrounds.
+- **Motion**: all animations are `motion-safe:` gated and additionally
+  neutralised by the global `prefers-reduced-motion` rule.
+- **Section rhythm**: every content section uses an `text-overline` eyebrow +
+  `h2`, left-aligned; centered layout reserved for the hero and final CTA.

@@ -21,11 +21,10 @@ export const LogoStrip: React.FC = () => {
             >
               <img
                 src={item.logoSrc}
-                alt={item.alt}
-                width={48}
-                height={48}
+                alt=""
+                height={44}
                 loading="lazy"
-                className="h-12 w-12 object-contain"
+                className="h-11 w-auto max-w-[130px] object-contain"
               />
               <div className="flex flex-col items-center gap-1">
                 <span className="text-base font-semibold text-fg">

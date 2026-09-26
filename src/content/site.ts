@@ -52,7 +52,7 @@ export const siteContent: SiteContent = {
     ],
   },
   team: {
-    heading: "Team",
+    heading: "Meet the agents",
     roles: [
       { role: "Business Analyst", name: "Jacobin", icon: "analyst", avatar: "/avatars/jacobin.svg", capability: "Transforms needs into structured project scopes." },
       { role: "Architect", name: "Arjun", icon: "architect", avatar: "/avatars/arjun.svg", capability: "Designs scalable systems and task contracts." },

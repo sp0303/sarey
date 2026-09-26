@@ -3,36 +3,38 @@
 @tailwind utilities;
 
 @layer base {
+  /* Color tokens are stored as space-separated RGB channels so Tailwind's
+     /opacity modifiers (e.g. bg-accent/10) resolve correctly. */
   :root {
-    --color-bg: #FFFFFF;
-    --color-surface: #F1F5F9;
-    --color-border: #E2E8F0;
-    --color-fg: #0F172A;
-    --color-fg-muted: #475569;
-    --color-accent: #4F46E5;
-    --color-accent-hover: #4338CA;
-    --color-on-accent: #FFFFFF;
-    --color-focus: #4F46E5;
+    --color-bg: 255 255 255;
+    --color-surface: 241 245 249;
+    --color-border: 226 232 240;
+    --color-fg: 15 23 42;
+    --color-fg-muted: 71 85 105;
+    --color-accent: 79 70 229;
+    --color-accent-hover: 67 56 202;
+    --color-on-accent: 255 255 255;
+    --color-focus: 79 70 229;
     --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   }
 
   .dark {
-    --color-bg: #0B1120;
-    --color-surface: #151C2C;
-    --color-border: #273449;
-    --color-fg: #F1F5F9;
-    --color-fg-muted: #94A3B8;
-    --color-accent: #818CF8;
-    --color-accent-hover: #A5B4FC;
-    --color-on-accent: #FFFFFF;
-    --color-focus: #818CF8;
+    --color-bg: 11 17 32;
+    --color-surface: 21 28 44;
+    --color-border: 39 52 73;
+    --color-fg: 241 245 249;
+    --color-fg-muted: 148 163 184;
+    --color-accent: 129 140 248;
+    --color-accent-hover: 165 180 252;
+    --color-on-accent: 255 255 255;
+    --color-focus: 129 140 248;
   }
 
   body {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-    border-color: var(--color-border);
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-fg));
+    border-color: rgb(var(--color-border));
   }
   
   html {
@@ -109,12 +111,10 @@
 
   /* Animated gradient text */
   .text-gradient {
-    background-image: linear-gradient(100deg, #6366F1, #8B5CF6, #A855F7, #6366F1);
-    background-size: 200% auto;
+    background-image: linear-gradient(100deg, #6366F1, #8B5CF6, #A855F7);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: gradient-pan 6s linear infinite;
   }
 }
 
