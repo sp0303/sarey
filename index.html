@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sarey.tech - Agent Foundry</title>
+    <meta name="description" content="A multi-vendor AI team that ships production software." />
+    <link rel="canonical" href="https://sarey.tech" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <meta property="og:title" content="sarey.tech - Agent Foundry" />
+    <meta property="og:description" content="A multi-vendor AI team that ships production software." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sarey.tech" />
+    <meta property="og:image" content="https://sarey.tech/og-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sarey.tech - Agent Foundry" />
+    <meta name="twitter:description" content="A multi-vendor AI team that ships production software." />
+    <meta name="twitter:image" content="https://sarey.tech/og-image.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "sarey.tech",
+        "url": "https://sarey.tech",
+        "logo": "https://sarey.tech/favicon.svg"
+      }
+    </script>
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-3 focus:left-3 focus:rounded-lg focus:bg-brand-600 focus:text-on-accent focus:px-4 focus:py-2">Skip to content</a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
