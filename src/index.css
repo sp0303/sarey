@@ -144,3 +144,12 @@
   85%  { opacity: 1; }
   100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
 }
+
+@keyframes beam-dash {
+  to { stroke-dashoffset: -32; }
+}
+
+@keyframes crest-pulse {
+  0%, 100% { transform: scale(1);    opacity: 1;    }
+  50%      { transform: scale(1.05); opacity: 0.92; }
+}
