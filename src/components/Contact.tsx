@@ -10,7 +10,7 @@ export const Contact: React.FC = () => {
           <div className="pointer-events-none absolute inset-0 -z-0" aria-hidden="true">
             <div
               className="absolute -top-24 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full blur-3xl motion-safe:animate-[aurora-drift_20s_ease-in-out_infinite]"
-              style={{ background: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.25), transparent 62%)' }}
+              style={{ background: 'radial-gradient(circle at 50% 50%, rgba(220,38,38,0.25), transparent 62%)' }}
             />
             <div className="absolute inset-0 bg-grid-dots text-fg-muted opacity-[0.12]" />
           </div>

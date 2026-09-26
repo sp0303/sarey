@@ -18,8 +18,8 @@ const config: Config = {
         'accent-hover': 'rgb(var(--color-accent-hover) / <alpha-value>)',
         'on-accent': 'rgb(var(--color-on-accent) / <alpha-value>)',
         focus: 'rgb(var(--color-focus) / <alpha-value>)',
-        'brand-600': '#4F46E5',
-        'brand-700': '#4338CA',
+        'brand-600': '#C1121F',
+        'brand-700': '#9E0E19',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],

@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
           className="absolute left-1/2 top-1/2 h-[120vmax] w-[120vmax] -translate-x-1/2 -translate-y-1/2 opacity-[0.10] motion-safe:animate-[orbit-spin_120s_linear_infinite]"
           style={{
             background:
-              'repeating-conic-gradient(from 0deg at 50% 50%, rgba(99,102,241,0.9) 0deg 3deg, transparent 3deg 9deg)',
+              'repeating-conic-gradient(from 0deg at 50% 50%, rgba(220,38,38,0.9) 0deg 3deg, transparent 3deg 9deg)',
             WebkitMaskImage: 'radial-gradient(circle at 50% 50%, #000 0%, transparent 60%)',
             maskImage: 'radial-gradient(circle at 50% 50%, #000 0%, transparent 60%)',
           }}
@@ -19,17 +19,17 @@ export const Hero: React.FC = () => {
         {/* aurora glow */}
         <div
           className="absolute -top-24 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full blur-3xl motion-safe:animate-[aurora-drift_18s_ease-in-out_infinite]"
-          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.30), transparent 62%)' }}
+          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(220,38,38,0.30), transparent 62%)' }}
         />
         <div
           className="absolute top-16 -left-24 h-[28rem] w-[28rem] rounded-full blur-3xl motion-safe:animate-[aurora-drift_24s_ease-in-out_infinite_reverse]"
-          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(168,85,247,0.22), transparent 60%)' }}
+          style={{ background: 'radial-gradient(circle at 50% 50%, rgba(234,88,12,0.24), transparent 60%)' }}
         />
         {/* comic halftone dots */}
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'radial-gradient(rgba(99,102,241,0.5) 1.6px, transparent 1.8px)',
+            backgroundImage: 'radial-gradient(rgba(220,38,38,0.5) 1.6px, transparent 1.8px)',
             backgroundSize: '18px 18px',
             WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 42%, #000 25%, transparent 72%)',
             maskImage: 'radial-gradient(ellipse 70% 65% at 50% 42%, #000 25%, transparent 72%)',
