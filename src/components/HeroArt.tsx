@@ -47,7 +47,7 @@ export const HeroArt: React.FC = () => {
           <stop offset="100%" stopColor="#B91C1C" />
         </radialGradient>
 
-        <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="beam-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="400">
           <stop offset="0%" stopColor="#DC2626" stopOpacity="0" />
           <stop offset="50%" stopColor="#EA580C" stopOpacity="1" />
           <stop offset="100%" stopColor="#B91C1C" stopOpacity="0" />
@@ -81,7 +81,7 @@ export const HeroArt: React.FC = () => {
       />
 
       {/* Orbit group */}
-      <g className="origin-center motion-safe:animate-[orbit-spin_60s_linear_infinite]">
+      <g className="motion-safe:animate-[orbit-spin_60s_linear_infinite]" style={{ transformOrigin: '200px 200px' }}>
         {/* 3. Orbit ring */}
         <circle
           cx={cx}
@@ -117,7 +117,7 @@ export const HeroArt: React.FC = () => {
               
               {/* Node (counter-rotate) */}
               <g
-                className="origin-center motion-safe:animate-[orbit-spin_60s_linear_infinite_reverse]"
+                className="motion-safe:animate-[orbit-spin_60s_linear_infinite_reverse]"
                 style={{ transformOrigin: `${nx}px ${ny}px` }}
               >
                 <circle
